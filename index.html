@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yp online - Smart Solutions for Business Growth</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      color: #212529;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 32px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #1050bb;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: 500;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+      background-color: #1050bb;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #0d4299;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      padding: 64px 0;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 32px;
+      color: #535353;
+    }
+
+    /* Hero image */
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 64px;
+    }
+
+    /* Who we are section */
+    .who-we-are {
+      padding: 64px 0;
+    }
+
+    .who-we-are .label {
+      color: #535353;
+      margin-bottom: 8px;
+    }
+
+    .who-we-are .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .who-we-are h2 {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .who-we-are p {
+      color: #535353;
+      margin-bottom: 32px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+
+    .feature-icon.vision {
+      background-color: rgba(181, 215, 92, 0.2);
+    }
+
+    .feature-icon.mission {
+      background-color: rgba(16, 80, 187, 0.1);
+    }
+
+    .feature-icon img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .feature h3 {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      font-size: 14px;
+      color: #535353;
+    }
+
+    .link-arrow {
+      display: inline-flex;
+      align-items: center;
+      color: #1050bb;
+      font-weight: 500;
+    }
+
+    .link-arrow svg {
+      margin-left: 8px;
+      width: 16px;
+      height: 16px;
+    }
+
+    /* CTA section */
+    .cta {
+      background-color: #333333;
+      padding: 64px 0;
+      color: white;
+    }
+
+    .cta-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cta-heading {
+      max-width: 600px;
+    }
+
+    .cta-label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .cta-label .bar {
+      width: 4px;
+      height: 24px;
+      background-color: #b5d75c;
+      margin-right: 8px;
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    /* Services section */
+    .services {
+      padding: 64px 0;
+    }
+
+    .services .label {
+      color: #535353;
+      margin-bottom: 8px;
+    }
+
+    .services h2 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 48px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+
+    .service {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-image {
+      height: 160px;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service h3 {
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      font-size: 14px;
+      color: #535353;
+      margin-bottom: 16px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: white;
+      border-top: 1px solid #e5e5e5;
+      padding: 48px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo {
+      height: 40px;
+      margin-bottom: 16px;
+    }
+
+    .footer-contact {
+      font-size: 14px;
+      color: #535353;
+      margin-bottom: 16px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-links a {
+      color: #535353;
+    }
+
+    .social-links a:hover {
+      color: #1050bb;
+    }
+
+    .footer-heading {
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: #535353;
+    }
+
+    .footer-links a:hover {
+      color: #1050bb;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid #e5e5e5;
+      font-size: 14px;
+      color: #535353;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #1050bb;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .who-we-are .grid,
+      .features,
+      .cta-container,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 32px 0;
+      }
+
+      .hero h1 {
+        font-size: 24px;
+      }
+
+      .hero p {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .hero-image {
+        height: 200px;
+        margin-bottom: 32px;
+      }
+
+      .who-we-are {
+        padding: 32px 0;
+      }
+
+      .who-we-are h2 {
+        font-size: 24px;
+        margin-bottom: 16px;
+      }
+
+      .who-we-are p {
+        margin-bottom: 24px;
+      }
+
+      .features {
+        gap: 24px;
+      }
+
+      .feature {
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .feature-icon {
+        margin-bottom: 8px;
+      }
+
+      .cta {
+        padding: 32px 0;
+      }
+
+      .cta-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta h2 {
+        font-size: 24px;
+      }
+
+      .cta-action {
+        margin-top: 24px;
+      }
+
+      .services {
+        padding: 32px 0;
+      }
+
+      .services h2 {
+        font-size: 24px;
+        margin-bottom: 24px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .service-image {
+        height: 200px;
+      }
+
+      .footer-grid {
+        gap: 24px;
+      }
+
+      .footer-section {
+        border-bottom: 1px solid #e5e5e5;
+        padding-bottom: 16px;
+      }
+
+      .footer-heading {
+        margin-bottom: 8px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-bottom-links {
+        margin-top: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="container">
+    <header>
+      <img src="/Assets/logo.png" alt="Yp online Logo" class="logo">
+      <button class="hamburger">☰</button>
+      <nav>
+        <a href="#">HOME</a>
+        <a href="#">PRODUCTS</a>
+        <a href="#">CAREERS</a>
+        <a href="#">CONTACT US</a>
+        <a href="#" class="btn btn-primary">JOIN US</a>
+      </nav>
+    </header>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>DOES YOUR BUSINESS NEED TO GROW?</h1>
+        <p>You're in luck, we have just what you need: simple, affordable and quick-to-deploy technology, tools and apps for your SME and Large Enterprises!</p>
+        <a href="#" class="btn btn-primary">
+          Get Started
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Hero Image -->
+    <div class="container">
+      <img src="/placeholder.svg?height=500&width=1200" alt="Business meeting with charts presentation" class="hero-image">
+    </div>
+
+    <!-- Who We Are Section -->
+    <section class="who-we-are">
+      <div class="container">
+        <div class="label">Who We Are</div>
+        <div class="grid">
+          <div>
+            <h2>Smart Solutions That Simplify and Elevate Your Business</h2>
+          </div>
+          <div>
+            <p>
+              At Yeep, we create intelligent technology designed to take the hassle out of running a business. Our solutions streamline your operations so you can handle the complexities so you can focus on growth and success. Our goal is to streamline your operations, boost efficiency, and maximize profits—so you can enjoy the journey of building something great. Let's work together to make your business thrive!
+            </p>
+            <div class="features">
+              <div class="feature">
+                <div class="feature-icon vision">
+                  <img src="/Assets/Layer_3.svg" alt="Vision Icon">
+                </div>
+                <h3>Vision</h3>
+                <p>Building a friction-free Africa where tech drives business growth</p>
+              </div>
+              <div class="feature">
+                <div class="feature-icon mission">
+                  <img src="/Assets/Frame.svg" alt="Mission Icon">
+                </div>
+                <h3>Mission</h3>
+                <p>Building accessible tech to Innovate & Scale-up African Businesses</p>
+              </div>
+            </div>
+            <a href="#" class="link-arrow">
+              Find Out More
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-container">
+          <div class="cta-heading">
+            <div class="cta-label">
+              <div class="bar"></div>
+              <p>We Can Help</p>
+            </div>
+            <h2>Let's show you how we can use tech to grow your business</h2>
+          </div>
+          <div class="cta-action">
+            <a href="#" class="btn btn-outline">
+              Get Started Now
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 8px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="label">Solutions Provided</div>
+        <h2>We focus on bringing value and solve business main challenges</h2>
+        <div class="services-grid">
+          <div class="service">
+            <div class="service-image">
+              <img src="/Assets/woman-using-laptop-credit-card-buy-online-cyber-monday-deals-event.jpg" alt="E-Commerce">
+            </div>
+            <h3>E-Commerce</h3>
+            <p>Launch and grow your online store effortlessly with secure payments and inventory management.</p>
+            <a href="#" class="link-arrow">
+              Find Out More
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+          <div class="service">
+            <div class="service-image">
+              <img src="/Assets/side-view-couple-sitting-table.jpg" alt="Hospitality">
+            </div>
+            <h3>Hospitality</h3>
+            <p>Streamline bookings and operations to deliver top-notch guest experiences.</p>
+          </div>
+          <div class="service">
+            <div class="service-image">
+              <img src="/Assets/homepage-seen-computer-screen.jpg" alt="Responsive Themes">
+            </div>
+            <h3>Responsive Themes</h3>
+            <p>Beautiful, mobile-friendly designs that keep customers engaged anywhere.</p>
+          </div>
+          <div class="service">
+            <div class="service-image">
+              <img src="/Assets/2151871171.jpg" alt="Search Functionality">
+            </div>
+            <h3>Search Functionality</h3>
+            <p>Make finding information fast and easy through smart experience and engagement.</p>
+          </div>
+          <div class="service">
+            <div class="service-image">
+              <img src="/Assets/7279.jpg" alt="Custom Domain">
+            </div>
+            <h3>Custom Domain</h3>
+            <p>Get a professional online presence with a domain that represents your brand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <img src="/assets/logo.png" alt="Yiponline Logo" class="footer-logo">
+          <p class="footer-contact">Lagos, Nigeria</p>
+          <div class="footer-contact">
+            <p>Contact:</p>
+            <p>(080) 123 4567</p>
+            <p>(080) 123 4568</p>
+          </div>
+          <div class="social-links">
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+            </a>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-heading">Useful Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-heading">Our Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Powpa</a></li>
+            <li><a href="#">Simpo</a></li>
+            <li><a href="#">Software Dev</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3 class="footer-heading">About Us</h3>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Send a Message</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 YIP-online IT Services. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
