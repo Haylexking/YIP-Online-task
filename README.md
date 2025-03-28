@@ -1,2 +1,2 @@
 # YIP Online task
- UI?UX Interview Task
+ UI/UX Interview Task
